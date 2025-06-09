@@ -1,0 +1,47 @@
+# Sheldon configuration file
+#
+# See https://sheldon.cli.rs
+
+shell = "zsh"
+
+[templates]
+defer = """{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source "{{ file }}"\n{% endfor %}{{ hooks?.post | nl }}"""
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+[plugins.promptinit]
+inline = "autoload -U promptinit; promptinit"
+
+[plugins.colored-man-pages]
+github = "ael-code/zsh-colored-man-pages"
+
+# [plugins.rbenv]
+# inline = 'eval "$(rbenv init - zsh)"'
+
+[plugins.nodenv]
+inline = 'eval "$(nodenv init -)"'
+
+# [plugins.asdf]
+# local = "/usr/local/opt/asdf/libexec"
+# use = ["asdf.sh"]
+# apply = ["source"]
+
+# [plugins.pyenv]
+# inline = 'eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"'
+
+# [plugins.sdkman]
+# local = "~/.sdkman"
+
+# update completions
+[plugins.compinit]
+inline = "compinit"
+
+# Load local plugins last, so they can overwrite config
+[plugins.dotfiles]
+local = "~/.zsh"
+apply = ["defer"]
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+apply = ["defer"]
