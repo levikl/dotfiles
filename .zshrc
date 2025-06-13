@@ -38,29 +38,21 @@ bindkey -v
 # zprof
 
 
-# pnpm
-#export PNPM_HOME="/Users/levi/Library/pnpm"
-#case ":$PATH:" in
-#  *":$PNPM_HOME:"*) ;;
-#  *) export PATH="$PNPM_HOME:$PATH" ;;
-#esac
-# pnpm end
-
 # bun completions
-[ -s "/Users/levi/.bun/_bun" ] && source "/Users/levi/.bun/_bun"
+# [ -s "/Users/levi/.bun/_bun" ] && source "/Users/levi/.bun/_bun"
 
 # bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"
 
 # flags for rust linker
-export LDFLAGS="-L/usr/local/opt/llvm/lib $LDFLAGS"
-export CPPFLAGS="-I/usr/local/opt/llvm/include $CPFLAGS"
+# export LDFLAGS="-L/usr/local/opt/llvm/lib $LDFLAGS"
+# export CPPFLAGS="-I/usr/local/opt/llvm/include $CPFLAGS"
 
 # sqlite (from homebrew) 
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/sqlite/lib $LDFLAGS"
-export CPPFLAGS="-I/usr/local/opt/sqlite/include $CPPFLAGS"
+# export PATH="/usr/local/opt/sqlite/bin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/sqlite/lib $LDFLAGS"
+# export CPPFLAGS="-I/usr/local/opt/sqlite/include $CPPFLAGS"
 
 # postgres (from homebrew)
-export PATH="/usr/local/Cellar/postgresql@16/16.4/bin:$PATH"
+# export PATH="/usr/local/Cellar/postgresql@16/16.4/bin:$PATH"
