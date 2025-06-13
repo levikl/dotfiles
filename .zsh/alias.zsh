@@ -15,3 +15,6 @@ alias find_large_files="du -a / | sort -n -r | head -n 50"
 alias ae="nohup /Users/levi/Library/Android/sdk/emulator/emulator -avd Pixel_4a_API_30 -netdelay none -netspeed full &"
 # andsa = android stay awake
 alias andsa="while true; do adb shell input keyevent mouse; sleep 5; done"
+alias vim="nvim"
+alias vi="nvim"
+alias oldvim="nvim"
