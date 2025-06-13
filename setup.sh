@@ -22,6 +22,7 @@ install_homebrew () {
 install_homebrew_packages () {
   homebrew_packages=(
     "sheldon"
+    "ripgrep"
     "neovim"
     "nodenv"
     "pnpm"
