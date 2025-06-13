@@ -40,7 +40,6 @@ inline = "compinit"
 # Load local plugins last, so they can overwrite config
 [plugins.dotfiles]
 local = "~/.zsh"
-apply = ["defer"]
 
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
