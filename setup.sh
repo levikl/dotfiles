@@ -26,6 +26,7 @@ install_homebrew_packages () {
     "neovim"
     "nodenv"
     "pnpm"
+    "lua"
     "bat"
   )
 
