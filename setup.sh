@@ -45,7 +45,6 @@ create_symlinks () {
   version_controlled_items=(
     # files
     ".zshrc"
-    ".vimrc"
     ".gitconfig"
     # ".tmux.conf"
     ".config/starship.toml"
