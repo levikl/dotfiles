@@ -28,6 +28,7 @@ install_homebrew_packages () {
     "pnpm"
     "lua"
     "bat"
+    "fd"
   )
 
   for package in "${homebrew_packages[@]}"; do
