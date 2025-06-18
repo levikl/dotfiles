@@ -6,7 +6,6 @@ main () {
   install_homebrew
   install_homebrew_packages
   create_symlinks
-  install_neovim_plugins
 }
 
 install_homebrew () {
@@ -21,6 +20,7 @@ install_homebrew () {
 
 install_homebrew_packages () {
   homebrew_packages=(
+    "lua-language-server"
     "sheldon"
     "ripgrep"
     "neovim"
@@ -45,8 +45,8 @@ create_symlinks () {
   version_controlled_items=(
     # files
     ".zshrc"
+    ".zprofile"
     ".gitconfig"
-    # ".tmux.conf"
     ".config/starship.toml"
 
     # directories
@@ -82,15 +82,6 @@ create_symlinks () {
       ln -s "$HOME/dotfiles/$item" "$HOME/$item"
     fi
   done
-}
-
-install_neovim_plugins () {
-  if [[ -d "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim" ]]; then
-    echo "packer neovim plugin is already already installed."
-  else
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-      ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-  fi
 }
 
 prompt_yes_no() {
