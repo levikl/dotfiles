@@ -6,3 +6,5 @@ if hash nvim 2>/dev/null; then
 else
   export EDITOR=vim
 fi
+
+export PATH=$PATH:$HOME/go/bin
