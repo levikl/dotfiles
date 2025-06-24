@@ -21,13 +21,19 @@ install_homebrew () {
 install_homebrew_packages () {
   homebrew_packages=(
     "lua-language-server"
+    "golangci-lint"
     "sheldon"
     "ripgrep"
     "neovim"
     "nodenv"
+    "python"
+    "delve"
     "pnpm"
-    "lua"
+    "qemu"
+    "tree"
     "bat"
+    "lua"
+    "rpm"
     "fd"
   )
 
