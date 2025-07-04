@@ -22,6 +22,7 @@ install_homebrew_packages () {
   homebrew_packages=(
     "lua-language-server"
     "golangci-lint"
+    "protobuf"
     "sheldon"
     "ripgrep"
     "neovim"
