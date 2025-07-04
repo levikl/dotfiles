@@ -7,4 +7,5 @@ else
   export EDITOR=vim
 fi
 
-export PATH="$PATH:$(go env GOPATH)/bin"
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"

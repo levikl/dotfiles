@@ -22,6 +22,9 @@ github = "ael-code/zsh-colored-man-pages"
 [plugins.nodenv]
 inline = 'eval "$(nodenv init -)"'
 
+[plugins.goenv]
+inline = 'eval "$(goenv init -)"'
+
 # [plugins.asdf]
 # local = "/usr/local/opt/asdf/libexec"
 # use = ["asdf.sh"]
