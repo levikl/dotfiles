@@ -28,10 +28,12 @@ case ${HIST_STAMPS-} in
   *) alias history="omz_history -t '$HIST_STAMPS'" ;;
 esac
 
-## History file configuration
-[ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
-[ "$HISTSIZE" -lt 50000 ] && HISTSIZE=50000
-[ "$SAVEHIST" -lt 10000 ] && SAVEHIST=10000
+
+# history opts
+HISTSIZE=1000000
+SAVEHIST=1000000
+HISTFILE="$XDG_CACHE_HOME/zsh_history" # move histfile to cache
+HISTCONTROL=ignoreboth # consecutive duplicates & commands starting with space are not saved
 
 ## History command configuration
 setopt extended_history       # record timestamp of command in HISTFILE
