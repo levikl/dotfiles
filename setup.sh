@@ -78,6 +78,7 @@ create_symlinks () {
     ".config/nvim"
     ".config/sheldon"
     ".config/hypr"
+    ".config/rofi"
   )
 
   for item in "${version_controlled_items[@]}"; do
