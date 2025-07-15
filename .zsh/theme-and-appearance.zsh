@@ -46,7 +46,7 @@ if command diff --color /dev/null /dev/null &>/dev/null; then
   alias diff='diff --color'
 fi
 
-setopt auto_cd
+# setopt auto_cd
 setopt multios
 setopt prompt_subst
 
