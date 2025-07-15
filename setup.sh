@@ -72,6 +72,7 @@ create_symlinks () {
     ".zprofile"
     ".gitconfig"
     ".config/starship.toml"
+    ".config/kwalletrc"
 
     # directories
     ".zsh"
