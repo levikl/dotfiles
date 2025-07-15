@@ -3,9 +3,26 @@
 set -euo pipefail
 
 main () {
+  os_specific_setup
+  create_symlinks
+}
+
+os_specific_setup () {
+  unameOut="$(uname -s)"
+  case "${unameOut}" in
+    Linux*)     linux;;
+    Darwin*)    mac;;
+    *)          fail "Unsupported OS: ${unameOut}"
+  esac
+}
+
+linux () {
+  echo "todo: bootstrap arch linux"
+}
+
+mac () {
   install_homebrew
   install_homebrew_packages
-  create_symlinks
 }
 
 install_homebrew () {
@@ -21,7 +38,7 @@ install_homebrew () {
 install_homebrew_packages () {
   homebrew_packages=(
     "lua-language-server"
-    "golangci-lint"
+    # "golangci-lint"
     "protobuf"
     "sheldon"
     "ripgrep"
@@ -60,6 +77,7 @@ create_symlinks () {
     ".zsh"
     ".config/nvim"
     ".config/sheldon"
+    ".config/hypr"
   )
 
   for item in "${version_controlled_items[@]}"; do
@@ -114,6 +132,11 @@ prompt_yes_no() {
         ;;
     esac
   done
+}
+
+function fail {
+  printf '%s\n' "$1" >&2
+  exit "${2-1}"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
