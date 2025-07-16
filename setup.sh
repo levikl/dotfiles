@@ -80,6 +80,8 @@ create_symlinks () {
     ".config/sheldon"
     ".config/hypr"
     ".config/rofi"
+    ".config/waybar"
+    ".config/ghostty"
   )
 
   for item in "${version_controlled_items[@]}"; do
