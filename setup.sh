@@ -18,6 +18,7 @@ os_specific_setup () {
 
 linux () {
   echo "todo: bootstrap arch linux"
+  echo "todo: install brave?"
 }
 
 mac () {
@@ -80,6 +81,7 @@ create_symlinks () {
     ".config/sheldon"
     ".config/hypr"
     ".config/rofi"
+    ".config/swaync"
     ".config/waybar"
     ".config/ghostty"
   )
