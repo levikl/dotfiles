@@ -9,6 +9,7 @@ set_light_mode() {
     sed -i 's/gtk-application-prefer-dark-theme=.*$/gtk-application-prefer-dark-theme=0/g' $HOME/.config/gtk-4.0/settings.ini
     sed -i 's/theme=.*$/theme=tokyonight-day/g' $HOME/.config/ghostty/config
     sed -i 's/^background=/#background=/g' $HOME/.config/ghostty/config
+    sed -i 's/^background-opacity=/#background-opacity=/g' $HOME/.config/ghostty/config
 
     # todo - kvantum + qt5/qt6 stuff
  
@@ -22,6 +23,7 @@ set_dark_mode() {
     sed -i 's/gtk-application-prefer-dark-theme=.*$/gtk-application-prefer-dark-theme=1/g' $HOME/.config/gtk-4.0/settings.ini
     sed -i 's/theme=.*$/theme=tokyonight_night/g' $HOME/.config/ghostty/config
     sed -i 's/^#background=/background=/g' $HOME/.config/ghostty/config
+    sed -i 's/^#background-opacity=/background-opacity=/g' $HOME/.config/ghostty/config
 
     # todo - kvantum + qt5/qt6 stuff
 
