@@ -81,6 +81,7 @@ create_symlinks () {
     ".config/sheldon"
     ".config/hypr"
     ".config/rofi"
+    ".config/tmux"
     ".config/swaync"
     ".config/waybar"
     ".config/ghostty"
