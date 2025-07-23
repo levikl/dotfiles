@@ -13,25 +13,27 @@
   rebase = false
 
 [alias]
-  s                 = status
-  r                 = reset
-  rb                = rebase
-  a                 = add
-  l                 = log --stat
-  d                 = diff
-  ds                = diff --staged
-  c                 = commit
-  cm                = commit -m
-  co                = checkout
-  po                = push origin
-  amend             = commit --amend --no-edit
+  s     = status
+  r     = reset
+  rb    = rebase
+  a     = add
+  l     = log --stat
+  d     = diff
+  ds    = diff --staged
+  c     = commit
+  cm    = commit -m
+  co    = checkout
+  po    = push origin
+  amend = commit --amend --no-edit
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+
 [submodule]
-	recurse = true
+  recurse = true
+
 [push]
-	recurseSubmodules = on-demand
+  recurseSubmodules = on-demand
