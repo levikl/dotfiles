@@ -17,7 +17,7 @@
   border-radius: 5px;
   margin: 5px;
   background: #101010;
-  margin-left: 1rem;
+  margin-left: 0.25rem;
 }
 
 #workspaces button {
@@ -37,22 +37,23 @@
 }
 
 #custom-music,
-#tray,
-#backlight,
 #clock,
 #battery,
 #pulseaudio,
 #network,
-#cpu,
 #memory,
 #custom-lock,
+#custom-notification,
 #custom-power {
   background-color: #101010;
-  padding: 0.5rem 1rem;
+  padding: 5px 9px;
   margin: 5px 0;
 }
 
-#memory {
+#cpu {
+  background-color: #101010;
+  padding: 5px 10px 5px 0px;
+  margin: 5px 0;
   border-radius: 0px 5px 5px 0px;
 }
 
@@ -74,18 +75,14 @@
   color: #e78284;
 }
 
-#backlight {
-  color: #e5c890;
-}
-
-#backlight,
+#memory,
 #battery {
   border-radius: 0;
 }
 
 #pulseaudio {
   color: #ea999c;
-  border-radius: 5px 0px 0px 5%;
+  border-radius: 5px 0px 0px 5px;
   margin-left: 1rem;
 }
 
@@ -95,18 +92,16 @@
 }
 
 #custom-lock {
-  border-radius: 5px 0px 0px 5px;
+  margin-left: 1rem;
+  padding-right: 12px;
+  border-radius: 5px;
   color: #babbf1;
 }
 
-#custom-power {
+#custom-notification {
+  margin-left: 0.25rem;
   margin-right: 1rem;
-  border-radius: 0px 5px 5px 0px;
-  color: #e78284;
-}
-
-#tray {
-  margin-right: 1rem;
-  margin-left: 1rem;
+  padding-right: 0.75rem;
   border-radius: 5px;
+  color: #babbf1;
 }
