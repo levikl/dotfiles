@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# vim: filetype=bash
 
 set -euo pipefail
 
@@ -30,7 +31,7 @@ install_homebrew () {
   if command -v brew &> /dev/null; then
     echo "homebrew is already installed."
   else
-    echo "intalling homebrew with curl..."
+    echo "installing homebrew with curl..."
     /usr/bin/env bash -c\
       "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
@@ -60,7 +61,7 @@ install_homebrew_packages () {
     if brew list $package &>/dev/null; then
       echo "$package is already installed."
     else
-      echo "intalling $package with homebrew..."
+      echo "installing $package with homebrew..."
       brew install $package
     fi
   done
@@ -92,9 +93,9 @@ create_symlinks () {
       if [[ ! -e "$HOME/$item" ]]; then
         # silently remove symlink if its target is non-existent
         rm -f "$HOME/$item"
-      else
-        echo "'$HOME/$item' is an existent symlink with a valid target."
-        if prompt_yes_no; then rm -f "$HOME/$item"; fi
+      # else
+      #   echo "'$HOME/$item' is an existent symlink with a valid target."
+      #   if prompt_yes_no; then rm -f "$HOME/$item"; fi
       fi
     else
       if [[ -d "$HOME/$item" ]]; then
@@ -149,5 +150,5 @@ function fail {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   main
 
-  echo "setup complete. shell restart required."
+  echo "setup complete."
 fi

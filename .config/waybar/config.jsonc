@@ -4,11 +4,14 @@
   "modules-left": ["custom/lock", "hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": [
+    "custom/email1",
+    "custom/email2",
     "pulseaudio",
-    "battery",
-    "network",
+    "custom/network",
+    "custom/vpn",
     "memory",
     "cpu",
+    "battery",
     "custom/notification"
   ],
   "hyprland/workspaces": {
@@ -29,8 +32,8 @@
   },
   "clock": {
     "timezone": "America/New_York",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%d - %I:%M %p}"
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%d\u2009•\u2009%I:%M\u2009%p}"
   },
   "network": {
     "format-wifi": "󰖩",
@@ -41,17 +44,24 @@
   },
   "cpu": {
     "interval": 1,
-    "format": "{usage:>2}%"
+    "format": " {usage}%"
+  },
+  "battery": {
+    "format": "{icon}\u2009{capacity}%",
+    "format-icons": {
+      "default": ["󰁼", "󰁿", "󰁹"]
+    }
   },
   "memory": {
     "interval": 30,
-    "format": " {used:0.1f}/32G"
+    "format": " \u2009{used:0.0f}/32G"
   },
+  // TODO - should this be pipewire and not pulseaudio? or nah
   "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-muted": "",
+    "format": "{icon} {volume}",
+    "format-muted": " ",
     "format-icons": {
-      "default": ["", "", " "]
+      "default": ["", "", "\u2009"]
     },
     "on-click": "pavucontrol"
   },
@@ -60,18 +70,39 @@
     "on-click": "sh -c '(sleep 0.5s; hyprlock)' & disown",
     "format": ""
   },
+  "custom/email1": {
+    "interval": 5,
+    "exec": "$HOME/.config/waybar/scripts/email1-unread.sh",
+    "format": " \u2009{text}"
+  },
+  "custom/email2": {
+    "interval": 5,
+    "exec": "$HOME/.config/waybar/scripts/email2-unread.sh",
+    "format": " \u2009{text}"
+  },
+  "custom/vpn": {
+    "interval": 80,
+    "exec": "$HOME/.config/waybar/scripts/vpn-status.sh",
+    "format": "{}"
+  },
+  "custom/network": {
+    "interval": 5,
+    "exec": "$HOME/.config/waybar/scripts/network-status.sh",
+    "format": "{}",
+    "tooltip": false
+  },
   // swaync
   "custom/notification": {
     "format": "{icon}",
     "format-icons": {
       "notification": "󰂚",
       "none": "󰂚",
-      "dnd-notification": "󰂚",
-      "dnd-none": "",
+      "dnd-notification": "\u2005",
+      "dnd-none": "\u2005",
       "inhibited-notification": "󰂚",
       "inhibited-none": "󰂚",
-      "dnd-inhibited-notification": "",
-      "dnd-inhibited-none": ""
+      "dnd-inhibited-notification": "\u2005",
+      "dnd-inhibited-none": "\u2005"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
