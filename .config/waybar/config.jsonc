@@ -81,7 +81,7 @@
     "format": " \u2009{text}"
   },
   "custom/vpn": {
-    "interval": 80,
+    "interval": 5,
     "exec": "$HOME/.config/waybar/scripts/vpn-status.sh",
     "format": "{}"
   },
