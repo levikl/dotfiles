@@ -8,12 +8,12 @@ else
 fi
 
 # goenv
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
+# export GOENV_ROOT="$HOME/.goenv"
+# export PATH="$GOENV_ROOT/bin:$PATH"
 
 # nodenv
-export NODENV_ROOT="$HOME/.nodenv"
-export PATH="$NODENV_ROOT/bin:$PATH"
+# export NODENV_ROOT="$HOME/.nodenv"
+# export PATH="$NODENV_ROOT/bin:$PATH"
 
 # keep .local last
 export PATH="$HOME/.local/bin:$PATH"

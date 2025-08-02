@@ -67,26 +67,39 @@ install_homebrew_packages () {
   done
 }
 
+create_zshenv_symlink () {
+  if [[ -L "$HOME/.zshenv " ]]; then
+    if [[ ! -e "$HOME/.zshenv" ]]; then
+      # silently remove symlink if its target is non-existent
+      rm -f "$HOME/.zshenv"
+    fi
+  else
+    if [[ -f "$HOME/.zshenv" ]]; then
+      echo "'$HOME/.zshenv' is an existent file."
+      if prompt_yes_no; then rm -f "$HOME/.zshenv"; fi
+    fi
+  fi
+
+  if [[ ! -e "$HOME/.zshenv" ]]; then
+    echo "creating symlink for .zshenv"
+    ln -s "$HOME/dotfiles/.zprofile" "$HOME/.zshenv"
+  fi
+}
+
 create_symlinks () {
   version_controlled_items=(
     # files
     ".zshrc"
-    ".zprofile"
     ".gitconfig"
     ".config/starship.toml"
-    ".config/kwalletrc"
 
     # directories
     ".zsh"
     ".config/nvim"
     ".config/sheldon"
-    ".config/hypr"
-    ".config/rofi"
-    ".config/tmux"
-    ".config/swaync"
-    ".config/waybar"
-    ".config/ghostty"
   )
+
+  create_zshenv_symlink
 
   for item in "${version_controlled_items[@]}"; do
     if [[ -L "$HOME/$item" ]]; then
