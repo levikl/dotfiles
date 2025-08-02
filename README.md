@@ -7,6 +7,6 @@ feel free to copy/adapt em
 ## install
 
 ```bash
-❯ git clone git@github.com:levikl/dotfiles.git
-❯ ./dotfiles/setup.sh
+git clone https://github.com/levikl/dotfiles.git
+./dotfiles/setup.sh
 ```
