@@ -32,7 +32,7 @@ esac
 # history opts
 HISTSIZE=1000000
 SAVEHIST=1000000
-HISTFILE="$XDG_CACHE_HOME/zsh_history" # move histfile to cache
+HISTFILE="$HOME/.cache/zsh_history" # move histfile to cache
 HISTCONTROL=ignoreboth # consecutive duplicates & commands starting with space are not saved
 
 ## History command configuration

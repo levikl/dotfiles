@@ -19,11 +19,11 @@ github = "ael-code/zsh-colored-man-pages"
 # [plugins.rbenv]
 # inline = 'eval "$(rbenv init - zsh)"'
 
-[plugins.nodenv]
-inline = 'eval "$(nodenv init -)"'
+# [plugins.nodenv]
+# inline = 'eval "$(nodenv init -)"'
 
-[plugins.goenv]
-inline = 'eval "$(goenv init -)"'
+# [plugins.goenv]
+# inline = 'eval "$(goenv init -)"'
 
 # [plugins.asdf]
 # local = "/usr/local/opt/asdf/libexec"
