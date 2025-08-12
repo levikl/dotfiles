@@ -73,12 +73,12 @@
   "custom/email1": {
     "interval": 5,
     "exec": "$HOME/.config/waybar/scripts/email1-unread.sh",
-    "format": " \u2009{text}"
+    "format": "{}"
   },
   "custom/email2": {
     "interval": 5,
     "exec": "$HOME/.config/waybar/scripts/email2-unread.sh",
-    "format": " \u2009{text}"
+    "format": "{}"
   },
   "custom/vpn": {
     "interval": 5,
