@@ -12,63 +12,17 @@ os_specific_setup () {
   unameOut="$(uname -s)"
   case "${unameOut}" in
     Linux*)     linux;;
-    Darwin*)    mac;;
     *)          fail "Unsupported OS: ${unameOut}"
   esac
 }
 
 linux () {
-  echo "todo: bootstrap arch linux"
-  echo "todo: install brave?"
-}
-
-mac () {
-  install_homebrew
-  install_homebrew_packages
-}
-
-install_homebrew () {
-  if command -v brew &> /dev/null; then
-    echo "homebrew is already installed."
-  else
-    echo "installing homebrew with curl..."
-    /usr/bin/env bash -c\
-      "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  fi
-}
-
-install_homebrew_packages () {
-  homebrew_packages=(
-    "lua-language-server"
-    # "golangci-lint"
-    "protobuf"
-    "sheldon"
-    "ripgrep"
-    "neovim"
-    "nodenv"
-    "python"
-    "delve"
-    "pnpm"
-    "qemu"
-    "tree"
-    "bat"
-    "lua"
-    "rpm"
-    "fd"
-  )
-
-  for package in "${homebrew_packages[@]}"; do
-    if brew list $package &>/dev/null; then
-      echo "$package is already installed."
-    else
-      echo "installing $package with homebrew..."
-      brew install $package
-    fi
-  done
+  sudo pacman -S --noconfirm --needed firewalld udisks2 cockpit-storaged cockpit-pcp cockpit-packagekit
+  sudo pacman -S --noconfirm --needed starship sheldon git nvim github-cli bat cronie docker-compose
 }
 
 create_zshenv_symlink () {
-  if [[ -L "$HOME/.zshenv " ]]; then
+  if [[ -L "$HOME/.zshenv" ]]; then
     if [[ ! -e "$HOME/.zshenv" ]]; then
       # silently remove symlink if its target is non-existent
       rm -f "$HOME/.zshenv"
