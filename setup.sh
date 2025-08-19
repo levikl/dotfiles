@@ -3,41 +3,45 @@
 
 set -euo pipefail
 
-main () {
+main() {
   os_specific_setup
   create_symlinks
 }
 
-os_specific_setup () {
+os_specific_setup() {
   unameOut="$(uname -s)"
   case "${unameOut}" in
-    Linux*)     linux;;
-    Darwin*)    mac;;
-    *)          fail "Unsupported OS: ${unameOut}"
+  Linux*) linux ;;
+  Darwin*) mac ;;
+  *) fail "Unsupported OS: ${unameOut}" ;;
   esac
 }
 
-linux () {
-  echo "todo: bootstrap arch linux"
-  echo "todo: install brave?"
+linux() {
+  sudo pacman -Rns --noconfirm dunst || echo "dunst is already uninstalled"
+  sudo pacman -S --noconfirm --needed $(cat pacman.pkgs)
+
+  sudo pacman -S --noconfirm --needed rustup
+  # todo: install paru
+
+  echo "todo: install paru packages"
 }
 
-mac () {
+mac() {
   install_homebrew
   install_homebrew_packages
 }
 
-install_homebrew () {
-  if command -v brew &> /dev/null; then
+install_homebrew() {
+  if command -v brew &>/dev/null; then
     echo "homebrew is already installed."
   else
     echo "installing homebrew with curl..."
-    /usr/bin/env bash -c\
-      "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 }
 
-install_homebrew_packages () {
+install_homebrew_packages() {
   homebrew_packages=(
     "lua-language-server"
     # "golangci-lint"
@@ -67,7 +71,7 @@ install_homebrew_packages () {
   done
 }
 
-create_symlinks () {
+create_symlinks() {
   version_controlled_items=(
     # files
     ".zshrc"
@@ -122,22 +126,22 @@ prompt_yes_no() {
     read -rp "Do you want to delete it? [y/N]: " response
 
     case "$response" in
-      # matches 'y', 'Y', 'yes', 'YES', etc.
-      [yY][eE][sS]|[yY])
-        return 0
-        ;;
-      # matches 'n', 'N', 'no', 'NO', etc.
-      [nN][oO]|[nN])
-        return 1
-        ;;
-      # empty input (ie. user pressed Enter)
-      "")
-        return 1 # default choice is No
-        ;;
-      # all other cases (ie. invalid input)
-      *)
-        echo "Invalid input. Please enter 'y' or 'n'."
-        ;;
+    # matches 'y', 'Y', 'yes', 'YES', etc.
+    [yY][eE][sS] | [yY])
+      return 0
+      ;;
+    # matches 'n', 'N', 'no', 'NO', etc.
+    [nN][oO] | [nN])
+      return 1
+      ;;
+    # empty input (ie. user pressed Enter)
+    "")
+      return 1 # default choice is No
+      ;;
+    # all other cases (ie. invalid input)
+    *)
+      echo "Invalid input. Please enter 'y' or 'n'."
+      ;;
     esac
   done
 }
