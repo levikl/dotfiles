@@ -1,6 +1,6 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = git@github.com:levikl/config.nvim.git
-[submodule ".config/private"]
-	path = .config/private
+[submodule "_dotfiles"]
+	path = _dotfiles
 	url = git@github.com:levikl/_dotfiles.git
