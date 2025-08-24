@@ -44,17 +44,17 @@
   },
   "cpu": {
     "interval": 1,
-    "format": " {usage}%"
+    "format": " {usage}"
   },
   "battery": {
-    "format": "{icon}\u2009{capacity}%",
+    "format": "{icon}\u2009{capacity}",
     "format-icons": {
       "default": ["󰁼", "󰁿", "󰁹"]
     }
   },
   "memory": {
     "interval": 30,
-    "format": " \u2009{used:0.0f}/24G"
+    "format": " \u2009{used:0.0f}/24"
   },
   // TODO - should this be pipewire and not pulseaudio? or nah
   "pulseaudio": {
