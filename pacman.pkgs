@@ -9,6 +9,7 @@ btop
 cronie
 docker
 docker-compose
+fastfetch
 filelight
 fzf
 gamescope
@@ -36,6 +37,8 @@ libreoffice-still
 libretro-core-info
 lollypop
 lynx
+man-db
+man-pages
 msmtp
 neomutt
 network-manager-applet
@@ -46,6 +49,7 @@ nwg-look
 obsidian
 parallel
 pass
+pavucontrol
 pnpm
 protonmail-bridge-core
 proton-vpn-gtk-app
@@ -62,9 +66,10 @@ starship
 swaync
 tldr
 tmux
+tree
 ttf-font-awesome
-ttf-jetbrains-mono-nerd
 ttf-jetbrains-mono
+ttf-jetbrains-mono-nerd
 ttf-nerd-fonts-symbols
 ttyper
 unrar
