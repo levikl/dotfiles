@@ -1,5 +1,6 @@
 adw-gtk-theme
 android-tools
+archlinux-xdg-menu
 bat
 bless
 bluez
@@ -23,6 +24,7 @@ gst-plugins-bad
 gst-plugins-ugly
 gtk-engine-murrine
 gtk-engines
+gwenview
 hypridle
 hyprlock
 hyprpaper

@@ -18,13 +18,21 @@ os_specific_setup() {
 }
 
 linux() {
-  sudo pacman -Rns --noconfirm dunst || echo "dunst is already uninstalled"
+  sudo pacman -Rns --noconfirm dunst || true
+  sudo rm /usr/share/applications/kitty-open.desktop || true
   sudo pacman -S --noconfirm --needed $(cat pacman.pkgs)
-
   sudo pacman -S --noconfirm --needed rustup
   # todo: install paru
-
   echo "todo: install paru packages"
+
+  echo "-------"
+  echo "make sure to run \`nwg-look\` once to initialize dark/light mode"
+  echo "-------"
+
+  xdg-mime default org.kde.dolphin.desktop inode/directory
+  xdg-mime default org.kde.gwenview.desktop image/png image/jpeg
+
+  XDG_MENU_PREFIX=arch- kbuildsycoca6
 }
 
 mac() {
