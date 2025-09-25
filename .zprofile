@@ -15,5 +15,9 @@ export PATH="$GOENV_ROOT/bin:$PATH"
 export NODENV_ROOT="$HOME/.nodenv"
 export PATH="$NODENV_ROOT/bin:$PATH"
 
+# .NET
+export DOTNET_ROOT=/usr/share/dotnet
+export PATH="$HOME/.dotnet/tools:$PATH"
+
 # keep .local last
 export PATH="$HOME/.local/bin:$PATH"
