@@ -22,12 +22,15 @@ linux() {
   sudo rm /usr/share/applications/kitty-open.desktop || true
   sudo pacman -S --noconfirm --needed $(cat pacman.pkgs)
   sudo pacman -S --noconfirm --needed rustup
+
   # todo: install paru
   echo "todo: install paru packages"
 
   echo "-------"
   echo "make sure to run \`nwg-look\` once to initialize dark/light mode"
   echo "-------"
+
+  sudo ln -s /usr/bin/wine /usr/local/bin/wine64
 
   xdg-mime default org.kde.dolphin.desktop inode/directory
   xdg-mime default org.kde.gwenview.desktop image/png image/jpeg
