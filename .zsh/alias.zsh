@@ -11,3 +11,5 @@ alias ae="nohup /Users/levi/Library/Android/sdk/emulator/emulator -avd Pixel_4a_
 alias andsa="while true; do adb shell input keyevent mouse; sleep 5; done"
 alias mutt="neomutt"
 alias dn="dotnet"
+alias dnb="dotnet build -t:Rebuild"
+alias dnr="dotnet run"
