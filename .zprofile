@@ -7,6 +7,9 @@ else
   export EDITOR=vim
 fi
 
+# monogame + wine
+export MGFXC_WINE_PATH="$HOME/.winemonogame"
+
 # goenv
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"

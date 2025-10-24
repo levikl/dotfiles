@@ -30,7 +30,10 @@ linux() {
   echo "make sure to run \`nwg-look\` once to initialize dark/light mode"
   echo "-------"
 
-  sudo ln -s /usr/bin/wine /usr/local/bin/wine64
+  if [ ! -d "$HOME/.winemonogame" ]; then
+    sudo ln -s /usr/bin/wine /usr/local/bin/wine64
+    wget -qO- https://monogame.net/downloads/net8_mgfxc_wine_setup.sh | bash
+  fi
 
   xdg-mime default org.kde.dolphin.desktop inode/directory
   xdg-mime default org.kde.gwenview.desktop image/png image/jpeg
