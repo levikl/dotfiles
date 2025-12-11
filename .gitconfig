@@ -37,7 +37,9 @@
 
 [push]
   recurseSubmodules = on-demand
+
 [pack]
-	threads = 0
+  threads = 0
+
 [http]
-	postBuffer = 524288000
+  postBuffer = 524288000
