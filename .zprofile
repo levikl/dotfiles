@@ -18,9 +18,20 @@ export PATH="$GOENV_ROOT/bin:$PATH"
 export NODENV_ROOT="$HOME/.nodenv"
 export PATH="$NODENV_ROOT/bin:$PATH"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
 # .NET
 export DOTNET_ROOT=/usr/share/dotnet
 export PATH="$HOME/.dotnet/tools:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/levi/.local/share/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 
 # keep .local last
 export PATH="$HOME/.local/bin:$PATH"

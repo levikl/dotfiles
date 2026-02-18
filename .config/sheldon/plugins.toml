@@ -30,7 +30,8 @@ inline = 'eval "$(goenv init -)"'
 # use = ["asdf.sh"]
 # apply = ["source"]
 
-# [plugins.pyenv]
+[plugins.pyenv]
+inline = 'eval "$(pyenv init -)"'
 # inline = 'eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"'
 
 # [plugins.sdkman]
