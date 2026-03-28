@@ -93,6 +93,7 @@ create_symlinks() {
     ".gitconfig"
     ".config/starship.toml"
     ".config/kwalletrc"
+    ".local/bin/fix-es-de"
 
     # directories
     ".zsh"
