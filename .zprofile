@@ -33,5 +33,25 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
+# composer (php)
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
+# go
+export PATH="$(go env GOPATH)/bin:$PATH"
+
+# podman
+export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+
+# pnpm
+export PNPM_HOME="/home/levi/.local/share/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME/bin:"*) ;;
+*) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # keep .local last
 export PATH="$HOME/.local/bin:$PATH"

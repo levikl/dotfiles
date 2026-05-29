@@ -94,6 +94,7 @@ create_symlinks() {
     ".config/starship.toml"
     ".config/kwalletrc"
     ".local/bin/fix-es-de"
+    ".local/bin/audit-check"
 
     # directories
     ".zsh"

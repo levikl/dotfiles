@@ -16,6 +16,12 @@ inline = "autoload -U promptinit; promptinit"
 [plugins.colored-man-pages]
 github = "ael-code/zsh-colored-man-pages"
 
+[plugins.mise]
+inline = 'eval "$(mise activate zsh)"'
+
+[plugins.bun]
+inline = '[ -s "/home/levi/.bun/_bun" ] && source "/home/levi/.bun/_bun"'
+
 # [plugins.rbenv]
 # inline = 'eval "$(rbenv init - zsh)"'
 

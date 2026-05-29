@@ -1,4 +1,5 @@
 format = """
+${custom.distrobox}\
 $username\
 $hostname\
 $directory\
@@ -44,3 +45,9 @@ style = "yellow"
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
+
+[custom.distrobox]
+when = 'test -n "$CONTAINER_ID"'
+command = 'grep PRETTY_NAME /etc/os-release | cut -d"=" -f2 | tr -d \"'
+format = '[\[$output\]]($style) '
+style = '#E95420'
