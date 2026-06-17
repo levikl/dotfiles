@@ -58,8 +58,11 @@ install_homebrew() {
 install_homebrew_packages() {
   homebrew_packages=(
     "lua-language-server"
+    "tree-sitter-cli"
+    "tree-sitter"
     # "golangci-lint"
     "protobuf"
+    "starship"
     "sheldon"
     "ripgrep"
     "neovim"
@@ -90,22 +93,36 @@ create_symlinks() {
     # files
     ".zshrc"
     ".zprofile"
+    ".ideavimrc"
     ".gitconfig"
+    ".gitignore_global"
     ".config/starship.toml"
-    ".config/kwalletrc"
-    ".local/bin/fix-es-de"
-    ".local/bin/audit-check"
 
-    # directories
+    # linux only files
+    # ".config/kwalletrc"
+    # ".local/bin/fix-es-de"
+    # ".local/bin/audit-check"
+
+    # shared directories
     ".zsh"
     ".config/nvim"
     ".config/sheldon"
-    ".config/hypr"
-    ".config/rofi"
     ".config/tmux"
-    ".config/swaync"
-    ".config/waybar"
     ".config/ghostty"
+
+    # linux only directories
+    # ".config/hypr"
+    # ".config/rofi"
+    # ".config/swaync"
+    # ".config/waybar"
+
+    # mac only directories
+    ".config/skhd"
+    ".config/yabai"
+    ".config/raycast"
+    ".config/karabiner"
+    ".config/sketchybar"
+    ".config/linearmouse"
   )
 
   for item in "${version_controlled_items[@]}"; do
