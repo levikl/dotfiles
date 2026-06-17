@@ -6,7 +6,7 @@
   defaultBranch = main
 
 [core]
-  excludesfile = /Users/levi/.gitignore
+  excludesfile = ~/.gitignore_global
   pager = less -x3,5
 
 [pull]

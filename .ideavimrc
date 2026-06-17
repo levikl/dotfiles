@@ -1,0 +1,55 @@
+let mapleader=" "
+
+" options
+set number relativenumber
+set clipboard+=unnamedplus
+set scrolloff=5
+set incsearch
+set visualbell
+
+" TODO: what does this do?
+" don't use Ex mode, use Q for formatting
+map Q gq
+
+" plugins
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+
+" plugin config
+let g:highlightedyank_highlight_duration = "200"
+let g:highlightedyank_highlight_color = "rgba(255, 157, 100, 255)"
+let g:highlightedyank_highlight_foreground_color = "rgba(0, 0, 0, 255)"
+
+" keymaps
+"nmap gl <Nop>
+nmap gl <Action>(ShowErrorDescription)
+nmap gra <Action>(ShowIntentionActions)
+nmap grn <Action>(RenameElement)
+nmap - <Action>(ActivateProjectToolWindow)
+nmap <leader>x <Action>(ActivateProblemsViewToolWindow)
+nmap <leader>fd <Action>(GotoFile)
+nmap <leader>fg <Action>(FindInPath)
+nmap <leader>rg <Action>(ReplaceInPath)
+
+nnoremap <leader>r :source ~/.ideavimrc<CR>
+
+"""""""""""""""""""""""
+" original vimrc below
+
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map <leader>r to the Reformat Code action
+"map <leader>r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map <leader>b to toggle the breakpoint on the current line
+"map <leader>b <Action>(ToggleLineBreakpoint)
+

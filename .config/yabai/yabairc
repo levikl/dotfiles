@@ -1,0 +1,41 @@
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+yabai -m config layout bsp
+
+# boot with the menu bar hidden (toggle with cmd+shift+m -> toggle-menubar.sh)
+yabai -m config menubar_opacity 0.0
+
+yabai -m config window_placement second_child
+
+# hovering over a window focuses it w/o clicking (sloppy focus)
+yabai -m config focus_follows_mouse autofocus
+
+# when focusing a window via keyboard, snap the mouse to the center of it
+yabai -m config mouse_follows_focus on
+
+# padding
+yabai -m config top_padding 8
+yabai -m config bottom_padding 2
+yabai -m config left_padding 2
+yabai -m config right_padding 2
+yabai -m config window_gap 2
+
+# mouse settings
+
+yabai -m config mouse_modifier cmd
+
+# left click + drag
+yabai -m config mouse_action1 move
+
+# right click + drag
+yabai -m config mouse_action2 resize
+
+yabai -m mouse_drop_action swap
+
+
+# Disable specific apps
+yabai -m rule --add app="^Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off

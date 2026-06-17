@@ -1,15 +1,17 @@
+title=" "
+macos-titlebar-style=tabs
+# notify-on-command-finish-action=no-bell
 term=ghostty
-window-padding-color = background
+window-padding-color=extend-always
 theme=TokyoNight Night
-# theme = vesper
-font-family = "Jet Brains Mono Nerd Font"
-font-size = 14
+font-family="JetBrainsMono Nerd Font"
+font-size=20
 background=000000
-# background-opacity=0.85
-background-blur = false
-font-feature = -calt, -liga, -dlig
+background-opacity=0.85
+background-blur=false
+font-feature=-calt, -liga, -dlig
 
-shell-integration-features = no-cursor,no-sudo,no-title
+shell-integration-features=no-cursor,no-sudo,no-title
 gtk-titlebar = false
 
 mouse-scroll-multiplier = 0.3

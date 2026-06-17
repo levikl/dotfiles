@@ -1,3 +1,6 @@
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+
 if hash nvim 2>/dev/null; then
   export EDITOR=nvim
 
@@ -52,6 +55,12 @@ esac
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+
+# kotlin
+export KOTLIN_LSP_DIR="${${:-/opt/homebrew/bin/kotlin-lsp}:A:h}"
 
 # keep .local last
 export PATH="$HOME/.local/bin:$PATH"

@@ -1,0 +1,33 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.11.2",
+  "schemes" : [
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xc52b",
+          "productName" : "USB Receiver",
+          "vendorID" : "0x46d"
+        }
+      },
+      "scrolling" : {
+        "acceleration" : 1,
+        "distance" : 3,
+        "modifiers" : {
+          "vertical" : {
+            "command" : {
+              "type" : "pinchZoom"
+            }
+          }
+        },
+        "reverse" : {
+          "vertical" : true
+        },
+        "smoothed" : {
+          "enabled" : false
+        },
+        "speed" : 0
+      }
+    }
+  ]
+}

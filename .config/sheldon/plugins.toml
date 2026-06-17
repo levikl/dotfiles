@@ -17,7 +17,9 @@ inline = "autoload -U promptinit; promptinit"
 github = "ael-code/zsh-colored-man-pages"
 
 [plugins.mise]
-inline = 'eval "$(mise activate zsh)"'
+inline = '''
+zsh-defer -c 'eval "$($HOME/.local/bin/mise activate zsh)"'
+'''
 
 [plugins.bun]
 inline = '[ -s "/home/levi/.bun/_bun" ] && source "/home/levi/.bun/_bun"'
@@ -26,10 +28,17 @@ inline = '[ -s "/home/levi/.bun/_bun" ] && source "/home/levi/.bun/_bun"'
 # inline = 'eval "$(rbenv init - zsh)"'
 
 [plugins.nodenv]
-inline = 'eval "$(nodenv init -)"'
+inline = '''
+zsh-defer -c 'eval "$(nodenv init -)"'
+'''
+
+[plugins.deno]
+inline = 'source "$HOME/.deno/env"'
 
 [plugins.goenv]
-inline = 'eval "$(goenv init -)"'
+inline = '''
+zsh-defer -c 'eval "$(goenv init -)"'
+'''
 
 # [plugins.asdf]
 # local = "/usr/local/opt/asdf/libexec"
@@ -37,11 +46,15 @@ inline = 'eval "$(goenv init -)"'
 # apply = ["source"]
 
 [plugins.pyenv]
-inline = 'eval "$(pyenv init -)"'
+inline = '''
+zsh-defer -c 'eval "$(pyenv init -)"'
+'''
 # inline = 'eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"'
 
-# [plugins.sdkman]
-# local = "~/.sdkman"
+[plugins.sdkman]
+inline = '''
+zsh-defer -c '[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"'
+'''
 
 # update completions
 [plugins.compinit]
