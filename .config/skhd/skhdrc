@@ -1,20 +1,22 @@
 # Changing Window Focus
 
-cmd - return : osascript -e 'tell application "Ghostty" to make new window' -e 'tell application "Ghostty" to activate'
-cmd - b : osascript -e 'tell application "Brave Browser" to make new window' -e 'tell application "Brave Browser" to activate'
-cmd - e : osascript -e 'tell application "Finder" to make new Finder window' -e 'tell application "Finder" to activate'
+.alias $super rcmd + rctrl + ralt
+
+$super - return : osascript -e 'tell application "Ghostty" to make new window' -e 'tell application "Ghostty" to activate'
+$super - b : osascript -e 'tell application "Brave Browser" to make new window' -e 'tell application "Brave Browser" to activate'
+$super - e : osascript -e 'tell application "Finder" to make new Finder window' -e 'tell application "Finder" to activate'
 
 # change window focus within space (fallback to change focus across displays)
-cmd - h : ~/.config/skhd/change-focus.sh --west
-cmd - j : ~/.config/skhd/change-focus.sh --south
-cmd - k : ~/.config/skhd/change-focus.sh --north
-cmd - l : ~/.config/skhd/change-focus.sh --east
+$super - h : ~/.config/skhd/change-focus.sh --west
+$super - j : ~/.config/skhd/change-focus.sh --south
+$super - k : ~/.config/skhd/change-focus.sh --north
+$super - l : ~/.config/skhd/change-focus.sh --east
 
 # move windows
-cmd + shift - h : yabai -m window --swap west; yabai -m window --focus east; yabai -m window --focus west
-cmd + shift - j : yabai -m window --swap south; yabai -m window --focus north; yabai -m window --focus south
-cmd + shift - k : yabai -m window --swap north; yabai -m window --focus south; yabai -m window --focus north
-cmd + shift - l : yabai -m window --swap east; yabai -m window --focus west; yabai -m window --focus east
+$super + shift - h : yabai -m window --swap west; yabai -m window --focus east; yabai -m window --focus west
+$super + shift - j : yabai -m window --swap south; yabai -m window --focus north; yabai -m window --focus south
+$super + shift - k : yabai -m window --swap north; yabai -m window --focus south; yabai -m window --focus north
+$super + shift - l : yabai -m window --swap east; yabai -m window --focus west; yabai -m window --focus east
 
 # move window and split
 ctrl + alt - h : yabai -m window --warp west; yabai -m window --focus east; yabai -m window --focus west
@@ -23,9 +25,9 @@ ctrl + alt - k : yabai -m window --warp north; yabai -m window --focus south; ya
 ctrl + alt - l : yabai -m window --warp east; yabai -m window --focus west; yabai -m window --focus east
 
 # toggle dark/light mode
-hyper - t : osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
-hyper - c : ~/.config/skhd/toggle-caffeine.sh
-hyper - m : ~/.config/skhd/toggle-menubar.sh
+$super - t : osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+$super - c : ~/.config/skhd/toggle-caffeine.sh
+$super - m : ~/.config/skhd/toggle-menubar.sh
 
 # change focus between external displays (left and right)
 # alt - s : yabai -m display --focus west
@@ -64,28 +66,28 @@ shift + alt - n : yabai -m window --space next
 
 
 # move to space #
-cmd - 1 : yabai -m space --focus 1
-cmd - 2 : yabai -m space --focus 2
-cmd - 3 : yabai -m space --focus 3
-cmd - 4 : yabai -m space --focus 4
-cmd - 5 : yabai -m space --focus 5
-cmd - 6 : yabai -m space --focus 6
-cmd - 7 : yabai -m space --focus 7
-cmd - 8 : yabai -m space --focus 8
-cmd - 9 : yabai -m space --focus 9
-cmd - 0 : yabai -m space --focus 10
+$super - 1 : yabai -m space --focus 1
+$super - 2 : yabai -m space --focus 2
+$super - 3 : yabai -m space --focus 3
+$super - 4 : yabai -m space --focus 4
+$super - 5 : yabai -m space --focus 5
+$super - 6 : yabai -m space --focus 6
+$super - 7 : yabai -m space --focus 7
+$super - 8 : yabai -m space --focus 8
+$super - 9 : yabai -m space --focus 9
+$super - 0 : yabai -m space --focus 10
 
 # move window to space # and follow it
-cmd + shift - 1 : yabai -m window --space 1; yabai -m space --focus 1
-cmd + shift - 2 : yabai -m window --space 2; yabai -m space --focus 2
-cmd + shift - 3 : yabai -m window --space 3; yabai -m space --focus 3
-cmd + shift - 4 : yabai -m window --space 4; yabai -m space --focus 4
-cmd + shift - 5 : yabai -m window --space 5; yabai -m space --focus 5
-cmd + shift - 6 : yabai -m window --space 6; yabai -m space --focus 6
-cmd + shift - 7 : yabai -m window --space 7; yabai -m space --focus 7
-cmd + shift - 8 : yabai -m window --space 8; yabai -m space --focus 8
-cmd + shift - 9 : yabai -m window --space 9; yabai -m space --focus 9
-cmd + shift - 0 : yabai -m window --space 10; yabai -m space --focus 10
+$super + shift - 1 : yabai -m window --space 1; yabai -m space --focus 1
+$super + shift - 2 : yabai -m window --space 2; yabai -m space --focus 2
+$super + shift - 3 : yabai -m window --space 3; yabai -m space --focus 3
+$super + shift - 4 : yabai -m window --space 4; yabai -m space --focus 4
+$super + shift - 5 : yabai -m window --space 5; yabai -m space --focus 5
+$super + shift - 6 : yabai -m window --space 6; yabai -m space --focus 6
+$super + shift - 7 : yabai -m window --space 7; yabai -m space --focus 7
+$super + shift - 8 : yabai -m window --space 8; yabai -m space --focus 8
+$super + shift - 9 : yabai -m window --space 9; yabai -m space --focus 9
+$super + shift - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
 # start/stopping yabai
 

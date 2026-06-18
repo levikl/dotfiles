@@ -7,7 +7,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Caps Lock → Hyper (⌃⌥⇧⌘), Escape when tapped alone",
+                        "description": "Caps Lock → Left Command; Left Command → Meh Hyper (right ⌘⌥⌃)",
                         "manipulators": [
                             {
                                 "type": "basic",
@@ -15,13 +15,20 @@
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "to": [{ "key_code": "left_command" }]
+                            },
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [
                                     {
-                                        "key_code": "left_shift",
-                                        "modifiers": ["left_command", "left_control", "left_option"]
+                                        "key_code": "right_command",
+                                        "modifiers": ["right_control", "right_option"]
                                     }
-                                ],
-                                "to_if_alone": [{ "key_code": "escape" }]
+                                ]
                             }
                         ]
                     },
@@ -212,18 +219,12 @@
                         ]
                     },
                     {
-                        "description": "Ghostty: Cmd+Q → Cmd+W (prevent accidental quit)",
+                        "description": "Meh Hyper + Q → Cmd+W (close window instead of quit)",
                         "manipulators": [
                             {
                                 "type": "basic",
-                                "from": { "key_code": "q", "modifiers": { "mandatory": ["command"] } },
-                                "to": [{ "key_code": "w", "modifiers": ["left_command"] }],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"]
-                                    }
-                                ]
+                                "from": { "key_code": "q", "modifiers": { "mandatory": ["right_command", "right_control", "right_option"] } },
+                                "to": [{ "key_code": "w", "modifiers": ["left_command"] }]
                             }
                         ]
                     }
