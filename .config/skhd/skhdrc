@@ -13,16 +13,22 @@ $super - k : ~/.config/skhd/change-focus.sh --north
 $super - l : ~/.config/skhd/change-focus.sh --east
 
 # move windows
-$super + shift - h : yabai -m window --swap west; yabai -m window --focus east; yabai -m window --focus west
-$super + shift - j : yabai -m window --swap south; yabai -m window --focus north; yabai -m window --focus south
-$super + shift - k : yabai -m window --swap north; yabai -m window --focus south; yabai -m window --focus north
-$super + shift - l : yabai -m window --swap east; yabai -m window --focus west; yabai -m window --focus east
+$super + shift - h : ~/.config/skhd/swap-window.sh --west
+$super + shift - j : ~/.config/skhd/swap-window.sh --south
+$super + shift - k : ~/.config/skhd/swap-window.sh --north
+$super + shift - l : ~/.config/skhd/swap-window.sh --east
+
+# resize focused window (shift the edge in the arrow's direction)
+$super + shift - left  : yabai -m window --resize left:-50:0 ; yabai -m window --resize right:-50:0
+$super + shift - down  : yabai -m window --resize bottom:0:50 ; yabai -m window --resize top:0:50
+$super + shift - right : yabai -m window --resize right:50:0 ; yabai -m window --resize left:50:0
+$super + shift - up    : yabai -m window --resize top:0:-50 ; yabai -m window --resize bottom:0:-50
 
 # move window and split
-ctrl + alt - h : yabai -m window --warp west; yabai -m window --focus east; yabai -m window --focus west
-ctrl + alt - j : yabai -m window --warp south; yabai -m window --focus north; yabai -m window --focus south
-ctrl + alt - k : yabai -m window --warp north; yabai -m window --focus south; yabai -m window --focus north
-ctrl + alt - l : yabai -m window --warp east; yabai -m window --focus west; yabai -m window --focus east
+ctrl + alt - h : ~/.config/skhd/warp-window.sh --west
+ctrl + alt - j : ~/.config/skhd/warp-window.sh --south
+ctrl + alt - k : ~/.config/skhd/warp-window.sh --north
+ctrl + alt - l : ~/.config/skhd/warp-window.sh --east
 
 # toggle dark/light mode
 $super - t : osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
