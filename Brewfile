@@ -1,5 +1,6 @@
 tap "asmvik/formulae"
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
+tap "jackielii/tap"
 tap "jetbrains/utils", "https://github.com/JetBrains/homebrew-utils", trusted: true
 # Library for command-line editing
 brew "readline"
@@ -63,8 +64,6 @@ brew "tree"
 brew "tree-sitter-cli"
 # General-purpose lossless data-compression library
 brew "zlib"
-# Simple hotkey-daemon for macOS.
-brew "asmvik/formulae/skhd", trusted: true
 # A tiling window manager for macOS based on binary space partitioning.
 brew "asmvik/formulae/yabai", trusted: true
 # Custom macOS statusbar with shell plugin, interaction and graph support
@@ -85,6 +84,8 @@ cask "linearmouse"
 cask "raycast"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
+# Simple hotkey daemon written in Zig
+cask "jackielii/tap/skhd-zig", trusted: true
 # Google Chromium, sans integration with Google
 cask "ungoogled-chromium"
 # Web browser with built-in email client focusing on customization and control

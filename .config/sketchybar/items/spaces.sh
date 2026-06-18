@@ -35,6 +35,15 @@ for i in "${!SPACE_ICONS[@]}"; do
     --subscribe space.$sid mouse.clicked
 done
 
+# Invisible manager that relabels + reorders the space items to match the
+# logical hotkey chain (see plugins/space_reindex.sh). Driven by space/display
+# changes plus a custom event triggered by yabai signals (see yabairc).
+sketchybar --add event space_reindex
+sketchybar --add item space_reindex left \
+  --set space_reindex drawing=off updates=on \
+  script="$PLUGIN_DIR/space_reindex.sh" \
+  --subscribe space_reindex space_change display_change space_reindex
+
 space_creator=(
   icon=􀆊
   icon.font="$FONT:Heavy:16.0"

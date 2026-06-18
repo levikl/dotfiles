@@ -71,29 +71,29 @@ shift + alt - p : yabai -m window --space prev
 shift + alt - n : yabai -m window --space next
 
 
-# move to space #
-$super - 1 : yabai -m space --focus 1
-$super - 2 : yabai -m space --focus 2
-$super - 3 : yabai -m space --focus 3
-$super - 4 : yabai -m space --focus 4
-$super - 5 : yabai -m space --focus 5
-$super - 6 : yabai -m space --focus 6
-$super - 7 : yabai -m space --focus 7
-$super - 8 : yabai -m space --focus 8
-$super - 9 : yabai -m space --focus 9
-$super - 0 : yabai -m space --focus 10
+# move to space # (logical chain: ultrawide -> macbook -> external)
+$super - 1 : ~/.config/skhd/logical-space.sh --focus 1
+$super - 2 : ~/.config/skhd/logical-space.sh --focus 2
+$super - 3 : ~/.config/skhd/logical-space.sh --focus 3
+$super - 4 : ~/.config/skhd/logical-space.sh --focus 4
+$super - 5 : ~/.config/skhd/logical-space.sh --focus 5
+$super - 6 : ~/.config/skhd/logical-space.sh --focus 6
+$super - 7 : ~/.config/skhd/logical-space.sh --focus 7
+$super - 8 : ~/.config/skhd/logical-space.sh --focus 8
+$super - 9 : ~/.config/skhd/logical-space.sh --focus 9
+$super - 0 : ~/.config/skhd/logical-space.sh --focus 10
 
-# move window to space # and follow it
-$super + shift - 1 : yabai -m window --space 1; yabai -m space --focus 1
-$super + shift - 2 : yabai -m window --space 2; yabai -m space --focus 2
-$super + shift - 3 : yabai -m window --space 3; yabai -m space --focus 3
-$super + shift - 4 : yabai -m window --space 4; yabai -m space --focus 4
-$super + shift - 5 : yabai -m window --space 5; yabai -m space --focus 5
-$super + shift - 6 : yabai -m window --space 6; yabai -m space --focus 6
-$super + shift - 7 : yabai -m window --space 7; yabai -m space --focus 7
-$super + shift - 8 : yabai -m window --space 8; yabai -m space --focus 8
-$super + shift - 9 : yabai -m window --space 9; yabai -m space --focus 9
-$super + shift - 0 : yabai -m window --space 10; yabai -m space --focus 10
+# move window to space # and follow it (same logical chain)
+$super + shift - 1 : ~/.config/skhd/logical-space.sh --move 1
+$super + shift - 2 : ~/.config/skhd/logical-space.sh --move 2
+$super + shift - 3 : ~/.config/skhd/logical-space.sh --move 3
+$super + shift - 4 : ~/.config/skhd/logical-space.sh --move 4
+$super + shift - 5 : ~/.config/skhd/logical-space.sh --move 5
+$super + shift - 6 : ~/.config/skhd/logical-space.sh --move 6
+$super + shift - 7 : ~/.config/skhd/logical-space.sh --move 7
+$super + shift - 8 : ~/.config/skhd/logical-space.sh --move 8
+$super + shift - 9 : ~/.config/skhd/logical-space.sh --move 9
+$super + shift - 0 : ~/.config/skhd/logical-space.sh --move 10
 
 # start/stopping yabai
 

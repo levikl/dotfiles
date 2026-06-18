@@ -1,6 +1,12 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
+# Keep sketchybar's logical space numbering in sync (see sketchybar space_reindex)
+yabai -m signal --add event=space_created action="sketchybar --trigger space_reindex"
+yabai -m signal --add event=space_destroyed action="sketchybar --trigger space_reindex"
+yabai -m signal --add event=display_added action="sketchybar --trigger space_reindex"
+yabai -m signal --add event=display_removed action="sketchybar --trigger space_reindex"
+
 yabai -m config layout bsp
 
 # boot with the menu bar hidden (toggle with cmd+shift+m -> toggle-menubar.sh)
