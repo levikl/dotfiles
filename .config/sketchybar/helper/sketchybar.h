@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <stdio.h>
+#include <vector>
 
 typedef char* env;
 
@@ -37,7 +38,7 @@ struct mach_server {
 static struct mach_server g_mach_server;
 static mach_port_t g_mach_port = 0;
 
-static inline char* env_get_value_for_key(env env, char* key) {
+static inline char* env_get_value_for_key(env env, const char* key) {
   uint32_t caret = 0;
   for(;;) {
     if (!env[caret]) break;
@@ -72,7 +73,7 @@ static inline mach_port_t mach_get_bs_port() {
 }
 
 static inline void mach_receive_message(mach_port_t port, struct mach_buffer* buffer, bool timeout) {
-  *buffer = (struct mach_buffer) { 0 };
+  *buffer = (struct mach_buffer){};
   mach_msg_return_t msg_return;
   if (timeout)
     msg_return = mach_msg(&buffer->message.header,
@@ -101,7 +102,7 @@ static inline char* mach_send_message(mach_port_t port, char* message, uint32_t 
     return NULL;
   }
 
-  struct mach_message msg = { 0 };
+  struct mach_message msg = {};
   msg.header.msgh_remote_port = port;
   msg.header.msgh_local_port = 0;
   msg.header.msgh_id = 0;
@@ -174,7 +175,8 @@ static inline bool mach_server_begin(struct mach_server* mach_server, mach_handl
 
 static inline char* sketchybar(char* message) {
   uint32_t message_length = strlen(message) + 1;
-  char formatted_message[message_length + 1];
+  std::vector<char> formatted_message_buf(message_length + 1);
+  char* formatted_message = formatted_message_buf.data();
 
   char quote = '\0';
   uint32_t caret = 0;

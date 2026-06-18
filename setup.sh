@@ -52,12 +52,6 @@ linux() {
 mac() {
   install_homebrew
   install_homebrew_packages
-  build_logical_space
-}
-
-build_logical_space() {
-  echo "building skhd/logical-space helper..."
-  make -C "$HOME/dotfiles/.config/skhd/logical-space"
 }
 
 install_homebrew() {

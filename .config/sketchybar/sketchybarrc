@@ -15,6 +15,10 @@ killall helper
 (cd $CONFIG_DIR/helper && make)
 $CONFIG_DIR/helper/helper $HELPER >/dev/null 2>&1 &
 
+# Build the skhd/logical-space helper here too (gitignored binary, rebuilt at
+# launch; make is a no-op when the source is unchanged).
+(cd "$HOME/.config/skhd/logical-space" && make) >/dev/null 2>&1
+
 # Unload the macOS on screen indicator overlay for volume change
 launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist >/dev/null 2>&1 &
 
