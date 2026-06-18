@@ -1,1 +1,4 @@
 .config/waybar/scripts/email*
+
+# compiled skhd/logical-space helper (built by setup.sh / make)
+.config/skhd/logical-space/logical-space

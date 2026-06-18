@@ -22,6 +22,8 @@ brew "fd"
 brew "gh"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# JSON for Modern C++ (header-only; used by skhd/logical-space helper)
+brew "nlohmann-json"
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Language Server for the Lua language
