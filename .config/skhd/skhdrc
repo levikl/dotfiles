@@ -27,78 +27,8 @@ ctrl + alt - j : yabai -m window --warp south; yabai -m window --focus north; ya
 ctrl + alt - k : yabai -m window --warp north; yabai -m window --focus south; yabai -m window --focus north
 ctrl + alt - l : yabai -m window --warp east; yabai -m window --focus west; yabai -m window --focus east
 
-shift + ctrl - v [
-    "Ghostty" : skhd -k "cmd - v"
-    "Brave Browser" : skhd -k "cmd - v"
-    * ~
-]
-
-# use ctrl+t for new tabs (cmd+t is toggle theme)
-ctrl - t [
-    "Brave Browser" : osascript -e 'tell app "Brave Browser" to tell front window to make new tab'
-    # "Google Chrome" : osascript -e 'tell app "Google Chrome" to tell front window to make new tab'
-    "Chromium"      : osascript -e 'tell app "Chromium" to tell front window to make new tab'
-    * ~
-]
-
-# use ctrl+n for new windows
-ctrl - n [
-    "Brave Browser" : skhd -k "cmd - n"
-    # "Google Chrome" : skhd -k "cmd - n"
-    "Chromium"      : skhd -k "cmd - n"
-    * ~
-]
-
-# use ctrl+w for closing tabs/windows
-ctrl - w [
-    "Brave Browser" : skhd -k "cmd - w"
-    # "Google Chrome" : skhd -k "cmd - w"
-    "Chromium"      : skhd -k "cmd - w"
-    * ~
-]
-
-# use ctrl+a for select all
-ctrl - a [
-    "Brave Browser" : skhd -k "cmd - a"
-    # "Google Chrome" : skhd -k "cmd - a"
-    "Chromium"      : skhd -k "cmd - a"
-    * ~
-]
-
-# use ctrl+z for undo
-ctrl - z [
-    "Brave Browser" : skhd -k "cmd - z"
-    # "Google Chrome" : skhd -k "cmd - z"
-    "Chromium"      : skhd -k "cmd - z"
-    * ~
-]
-
-# use ctrl+backspace for deleting one word at a time
-ctrl - backspace [
-    "Brave Browser" : skhd -k "alt - backspace"
-    # "Google Chrome" : skhd -k "alt - backspace"
-    "Chromium"      : skhd -k "alt - backspace"
-    * ~
-]
-
-# use ctrl+left for back-tracking one word at a time
-ctrl - left [
-    "Brave Browser" : skhd -k "alt - left"
-    # "Google Chrome" : skhd -k "alt - left"
-    "Chromium"      : skhd -k "alt - left"
-    * ~
-]
-
-# use ctrl+right for progressing one word at a time
-ctrl - right [
-    "Brave Browser" : skhd -k "alt - right"
-    # "Google Chrome" : skhd -k "alt - right"
-    "Chromium"      : skhd -k "alt - right"
-    * ~
-]
-
 # toggle dark/light mode
-cmd - t : osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+hyper - t : osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
 
 # change focus between external displays (left and right)
 # alt - s : yabai -m display --focus west
