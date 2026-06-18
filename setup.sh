@@ -4,22 +4,24 @@
 set -euo pipefail
 
 main() {
+  set_os
   os_specific_setup
   create_symlinks
 }
 
-os_specific_setup() {
+set_os() {
   unameOut="$(uname -s)"
   case "${unameOut}" in
-  Linux*)
-    OS="linux"
-    linux
-    ;;
-  Darwin*)
-    OS="mac"
-    mac
-    ;;
+  Linux*) OS="linux" ;;
+  Darwin*) OS="mac" ;;
   *) fail "Unsupported OS: ${unameOut}" ;;
+  esac
+}
+
+os_specific_setup() {
+  case "$OS" in
+  linux) linux ;;
+  mac) mac ;;
   esac
 }
 
