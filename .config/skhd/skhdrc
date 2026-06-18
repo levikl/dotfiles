@@ -4,16 +4,11 @@ cmd - return : osascript -e 'tell application "Ghostty" to make new window' -e '
 cmd - b : osascript -e 'tell application "Brave Browser" to make new window' -e 'tell application "Brave Browser" to activate'
 cmd - e : osascript -e 'tell application "Finder" to make new Finder window' -e 'tell application "Finder" to activate'
 
-# change window focus within space
-cmd - h : yabai -m window --focus west
-cmd - j : yabai -m window --focus south
-cmd - k : yabai -m window --focus north
-cmd - l : yabai -m window --focus east
-
-alt - c : ~/.config/skhd/toggle-caffeine.sh
-
-# toggle menu bar opacity (0% <-> 100%) -- not macOS auto-hide
-cmd + shift - m : ~/.config/skhd/toggle-menubar.sh
+# change window focus within space (fallback to change focus across displays)
+cmd - h : ~/.config/skhd/change-focus.sh --west
+cmd - j : ~/.config/skhd/change-focus.sh --south
+cmd - k : ~/.config/skhd/change-focus.sh --north
+cmd - l : ~/.config/skhd/change-focus.sh --east
 
 # move windows
 cmd + shift - h : yabai -m window --swap west; yabai -m window --focus east; yabai -m window --focus west
@@ -29,6 +24,8 @@ ctrl + alt - l : yabai -m window --warp east; yabai -m window --focus west; yaba
 
 # toggle dark/light mode
 hyper - t : osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+hyper - c : ~/.config/skhd/toggle-caffeine.sh
+hyper - m : ~/.config/skhd/toggle-menubar.sh
 
 # change focus between external displays (left and right)
 # alt - s : yabai -m display --focus west
