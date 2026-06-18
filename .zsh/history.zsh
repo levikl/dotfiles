@@ -7,7 +7,7 @@ function omz_history {
 
   if [[ -n "$clear" ]]; then
     # if -c provided, clobber the history file
-    echo -n >| "$HISTFILE"
+    echo -n >|"$HISTFILE"
     fc -p "$HISTFILE"
     echo >&2 History file deleted.
   elif [[ -n "$list" ]]; then
@@ -21,17 +21,21 @@ function omz_history {
 
 # Timestamp format
 case ${HIST_STAMPS-} in
-  "mm/dd/yyyy") alias history='omz_history -f' ;;
-  "dd.mm.yyyy") alias history='omz_history -E' ;;
-  "yyyy-mm-dd") alias history='omz_history -i' ;;
-  "") alias history='omz_history' ;;
-  *) alias history="omz_history -t '$HIST_STAMPS'" ;;
+"mm/dd/yyyy") alias history='omz_history -f' ;;
+"dd.mm.yyyy") alias history='omz_history -E' ;;
+"yyyy-mm-dd") alias history='omz_history -i' ;;
+"") alias history='omz_history' ;;
+*) alias history="omz_history -t '$HIST_STAMPS'" ;;
 esac
 
-## History file configuration
-[ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
-[ "$HISTSIZE" -lt 50000 ] && HISTSIZE=50000
-[ "$SAVEHIST" -lt 10000 ] && SAVEHIST=10000
+HISTSIZE=1000000
+SAVEHIST=1000000
+unameOut="$(uname -s)"
+case "${unameOut}" in
+Linux*) HISTFILE="$XDG_CACHE_HOME/zsh_history" ;;
+Darwin*) HISTFILE="$HOME/.zsh_history" ;;
+*) fail "Unsupported OS: ${unameOut}" ;;
+esac
 HISTCONTROL=ignoreboth # consecutive duplicates & commands starting with space are not saved
 
 ## History command configuration
