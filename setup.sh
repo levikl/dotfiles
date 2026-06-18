@@ -11,8 +11,14 @@ main() {
 os_specific_setup() {
   unameOut="$(uname -s)"
   case "${unameOut}" in
-  Linux*) linux ;;
-  Darwin*) mac ;;
+  Linux*)
+    OS="linux"
+    linux
+    ;;
+  Darwin*)
+    OS="mac"
+    mac
+    ;;
   *) fail "Unsupported OS: ${unameOut}" ;;
   esac
 }
@@ -61,7 +67,7 @@ install_homebrew_packages() {
 }
 
 create_symlinks() {
-  version_controlled_items=(
+  shared_items=(
     # files
     ".zshrc"
     ".zprofile"
@@ -70,25 +76,29 @@ create_symlinks() {
     ".gitignore_global"
     ".config/starship.toml"
 
-    # linux only files
-    # ".config/kwalletrc"
-    # ".local/bin/fix-es-de"
-    # ".local/bin/audit-check"
-
-    # shared directories
+    # directories
     ".zsh"
     ".config/nvim"
     ".config/sheldon"
     ".config/tmux"
     ".config/ghostty"
+  )
 
-    # linux only directories
-    # ".config/hypr"
-    # ".config/rofi"
-    # ".config/swaync"
-    # ".config/waybar"
+  linux_items=(
+    # files
+    ".config/kwalletrc"
+    ".local/bin/fix-es-de"
+    ".local/bin/audit-check"
 
-    # mac only directories
+    # directories
+    ".config/hypr"
+    ".config/rofi"
+    ".config/swaync"
+    ".config/waybar"
+  )
+
+  mac_items=(
+    # directories
     ".config/skhd"
     ".config/yabai"
     ".config/raycast"
@@ -96,6 +106,12 @@ create_symlinks() {
     ".config/sketchybar"
     ".config/linearmouse"
   )
+
+  version_controlled_items=("${shared_items[@]}")
+  case "$OS" in
+  linux) version_controlled_items+=("${linux_items[@]}") ;;
+  mac) version_controlled_items+=("${mac_items[@]}") ;;
+  esac
 
   for item in "${version_controlled_items[@]}"; do
     if [[ -L "$HOME/$item" ]]; then
