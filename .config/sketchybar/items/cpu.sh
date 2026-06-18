@@ -12,7 +12,9 @@
 cpu_percent=(
   icon=""
   icon.font="$FONT:Regular:16.0"
-  icon.padding_right=0
+  label.padding_left=0
+  icon.padding_left=2
+  icon.padding_right=1
   label=CPU
   update_freq=4
   mach_helper="$HELPER"

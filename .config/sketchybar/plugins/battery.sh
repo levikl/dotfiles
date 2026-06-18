@@ -40,4 +40,4 @@ if [[ $CHARGING != "" ]]; then
   DRAWING=off
 fi
 
-sketchybar --set $NAME drawing=on icon="$ICON" icon.color=$COLOR label="${PERCENTAGE}%" label.color=$COLOR
+sketchybar --set $NAME drawing=on icon="$ICON" icon.color=$COLOR label=$PERCENTAGE label.color=$COLOR

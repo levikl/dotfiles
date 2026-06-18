@@ -23,7 +23,7 @@ volume_change() {
   *) ICON=$VOLUME_100 ;;
   esac
 
-  sketchybar --set volume_icon icon=$ICON label="${INFO}%" --set $NAME slider.percentage=$INFO slider.width=0
+  sketchybar --set volume_icon icon=$ICON label=$INFO --set $NAME slider.percentage=$INFO slider.width=0
 
   # INITIAL_WIDTH="$(sketchybar --query $NAME | jq -r ".slider.width")"
   # if [ "$INITIAL_WIDTH" -eq "0" ]; then

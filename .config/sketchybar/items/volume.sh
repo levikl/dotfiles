@@ -16,21 +16,16 @@ volume_slider=(
 volume_icon=(
   # click_script="$PLUGIN_DIR/volume_click.sh"
   script="$PLUGIN_DIR/volume.sh"
-  padding_left=5
+  padding_left=1
   padding_right=0
   icon=$VOLUME_100
   icon.align=left
-  icon.color=$RED
+  icon.color=$ORANGE
   icon.font="$FONT:Regular:14.0"
+  label.padding_left=0
   label.padding_right=0
   label.align=right
-  label.color=$RED
-  # label.font="$FONT:Regular:14.0"
-)
-
-status_bracket=(
-  background.color=$BACKGROUND_1
-  background.border_color=$BACKGROUND_2
+  label.color=$ORANGE
 )
 
 sketchybar --add slider volume right \
@@ -40,6 +35,3 @@ sketchybar --add slider volume right \
   --add item volume_icon right \
   --set volume_icon "${volume_icon[@]}" \
   --subscribe volume_icon mouse.scrolled
-
-sketchybar --add bracket status brew github.bell wifi volume_icon \
-  --set status "${status_bracket[@]}"

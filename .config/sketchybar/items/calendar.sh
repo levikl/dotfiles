@@ -1,11 +1,10 @@
 #!/bin/bash
 
 calendar=(
-  icon=cal
-  icon.font="$FONT:Black:12.0"
-  label.color=$BLUE
-  label.font="$FONT:Bold:14.0"
+  icon.drawing=off
   icon.padding_right=0
+  label.color=$BLUE
+  label.font="$FONT:Bold:16.0"
   label.align=right
   padding_left=3
   update_freq=30

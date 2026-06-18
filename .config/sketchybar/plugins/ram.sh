@@ -22,7 +22,7 @@ fi
 
 SWAP_USED=$(sysctl -n vm.swapusage | awk '{print $6}')
 
-LABEL="${USED_GB}/${TOTAL_RAM}G"
+LABEL="${USED_GB}/${TOTAL_RAM}"
 
 if [ "$SWAP_USED" != "0.00M" ]; then
   LABEL="${LABEL} [Swap: ${SWAP_USED}]"

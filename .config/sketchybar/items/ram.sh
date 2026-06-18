@@ -6,6 +6,9 @@ ram=(
   icon="􀫦"
   padding_right=0
   padding_left=0
+  label.padding_left=0
+  icon.padding_left=0
+  icon.padding_right=3
   update_freq=5
 )
 
