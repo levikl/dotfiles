@@ -2,21 +2,14 @@
 
 source "$CONFIG_DIR/colors.sh"
 
-PAGE_SIZE=$(pagesize)
-
 TOTAL_RAM=36
 
-read -r USED_GB PERCENTAGE <<<$(vm_stat | awk -v psize=$PAGE_SIZE -v total=$TOTAL_RAM '
-  /Anonymous pages/ { gsub("\\.", "", $NF); anon=$NF }
-  /Pages wired down/ { gsub("\\.", "", $NF); wired=$NF }
-  /Pages occupied by compressor/ { gsub("\\.", "", $NF); comp=$NF }
-  END {
-    # Calculate total used bytes using the Activity Monitor "App Memory" formula
-    used = (anon + wired + comp) * psize / 1073741824
-    pct = (used / total) * 100
-    
-    # Output GBs (1 decimal place) and Percentage (integer)
-    printf "%d %.0f\n", used, pct
+read -r USED_GB PERCENTAGE <<<$(vm_stat | awk -v tot=$(sysctl -n hw.memsize) '
+  /page size of/{ps=$8} /Pages free/{fr=$3} /File-backed/{fb=$3}
+  END{
+    gsub(/\./,"",fr); gsub(/\./,"",fb); used=tot-(fr+fb)*ps;
+
+    printf "%d %.0f\n", used/2^30, used/tot*100
   }
 ')
 

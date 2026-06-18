@@ -13,10 +13,6 @@ fi
 # monogame + wine
 export MGFXC_WINE_PATH="$HOME/.winemonogame"
 
-# goenv
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-
 # nodenv
 export NODENV_ROOT="$HOME/.nodenv"
 export PATH="$NODENV_ROOT/bin:$PATH"
@@ -40,7 +36,7 @@ esac
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # go
-export PATH="$(go env GOPATH)/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 # podman
 export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"

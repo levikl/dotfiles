@@ -56,36 +56,8 @@ install_homebrew() {
 }
 
 install_homebrew_packages() {
-  homebrew_packages=(
-    "lua-language-server"
-    "tree-sitter-cli"
-    "tree-sitter"
-    # "golangci-lint"
-    "protobuf"
-    "starship"
-    "sheldon"
-    "ripgrep"
-    "neovim"
-    "nodenv"
-    "python"
-    "delve"
-    "pnpm"
-    "qemu"
-    "tree"
-    "bat"
-    "lua"
-    "rpm"
-    "fd"
-  )
-
-  for package in "${homebrew_packages[@]}"; do
-    if brew list $package &>/dev/null; then
-      echo "$package is already installed."
-    else
-      echo "installing $package with homebrew..."
-      brew install $package
-    fi
-  done
+  echo "installing homebrew packages from Brewfile..."
+  brew bundle install --file=Brewfile
 }
 
 create_symlinks() {
