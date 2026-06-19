@@ -1,4 +1,4 @@
-// logical-space — compute hotkey labels for spaces across a multi-monitor setup,
+// logical-space -- compute hotkey labels for spaces across a multi-monitor setup,
 // independent of macOS's global space numbering.
 //
 // macOS numbers spaces globally in display-arrangement (row-major) order, which

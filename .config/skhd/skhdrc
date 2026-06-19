@@ -7,16 +7,16 @@ $super - b : osascript -e 'tell application "Brave Browser" to make new window' 
 $super - e : osascript -e 'tell application "Finder" to make new Finder window' -e 'tell application "Finder" to activate'
 
 # change window focus within space (fallback to change focus across displays)
-$super - h : ~/.config/skhd/change-focus.sh --west
-$super - j : ~/.config/skhd/change-focus.sh --south
-$super - k : ~/.config/skhd/change-focus.sh --north
-$super - l : ~/.config/skhd/change-focus.sh --east
+$super - h : ~/.config/skhd/scripts/change-focus.sh --west
+$super - j : ~/.config/skhd/scripts/change-focus.sh --south
+$super - k : ~/.config/skhd/scripts/change-focus.sh --north
+$super - l : ~/.config/skhd/scripts/change-focus.sh --east
 
 # move windows
-$super + shift - h : ~/.config/skhd/swap-window.sh --west
-$super + shift - j : ~/.config/skhd/swap-window.sh --south
-$super + shift - k : ~/.config/skhd/swap-window.sh --north
-$super + shift - l : ~/.config/skhd/swap-window.sh --east
+$super + shift - h : ~/.config/skhd/scripts/swap-window.sh --west
+$super + shift - j : ~/.config/skhd/scripts/swap-window.sh --south
+$super + shift - k : ~/.config/skhd/scripts/swap-window.sh --north
+$super + shift - l : ~/.config/skhd/scripts/swap-window.sh --east
 
 # resize focused window (shift the edge in the arrow's direction)
 $super + shift - left  : yabai -m window --resize left:-50:0 ; yabai -m window --resize right:-50:0
@@ -25,15 +25,15 @@ $super + shift - right : yabai -m window --resize right:50:0 ; yabai -m window -
 $super + shift - up    : yabai -m window --resize top:0:-50 ; yabai -m window --resize bottom:0:-50
 
 # move window and split
-ctrl + alt - h : ~/.config/skhd/warp-window.sh --west
-ctrl + alt - j : ~/.config/skhd/warp-window.sh --south
-ctrl + alt - k : ~/.config/skhd/warp-window.sh --north
-ctrl + alt - l : ~/.config/skhd/warp-window.sh --east
+ctrl + alt - h : ~/.config/skhd/scripts/warp-window.sh --west
+ctrl + alt - j : ~/.config/skhd/scripts/warp-window.sh --south
+ctrl + alt - k : ~/.config/skhd/scripts/warp-window.sh --north
+ctrl + alt - l : ~/.config/skhd/scripts/warp-window.sh --east
 
 # toggle dark/light mode
 $super - t : osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
-$super - c : ~/.config/skhd/toggle-caffeine.sh
-$super - m : ~/.config/skhd/toggle-menubar.sh
+$super - c : ~/.config/skhd/scripts/toggle-caffeine.sh
+$super - m : ~/.config/skhd/scripts/toggle-menubar.sh
 
 # change focus between external displays (left and right)
 # alt - s : yabai -m display --focus west
@@ -72,28 +72,28 @@ shift + alt - n : yabai -m window --space next
 
 
 # move to space # (logical chain: ultrawide -> macbook -> external)
-$super - 1 : ~/.config/skhd/logical-space/logical-space --focus 1
-$super - 2 : ~/.config/skhd/logical-space/logical-space --focus 2
-$super - 3 : ~/.config/skhd/logical-space/logical-space --focus 3
-$super - 4 : ~/.config/skhd/logical-space/logical-space --focus 4
-$super - 5 : ~/.config/skhd/logical-space/logical-space --focus 5
-$super - 6 : ~/.config/skhd/logical-space/logical-space --focus 6
-$super - 7 : ~/.config/skhd/logical-space/logical-space --focus 7
-$super - 8 : ~/.config/skhd/logical-space/logical-space --focus 8
-$super - 9 : ~/.config/skhd/logical-space/logical-space --focus 9
-$super - 0 : ~/.config/skhd/logical-space/logical-space --focus 10
+$super - 1 : ~/.config/skhd/scripts/logical-space --focus 1
+$super - 2 : ~/.config/skhd/scripts/logical-space --focus 2
+$super - 3 : ~/.config/skhd/scripts/logical-space --focus 3
+$super - 4 : ~/.config/skhd/scripts/logical-space --focus 4
+$super - 5 : ~/.config/skhd/scripts/logical-space --focus 5
+$super - 6 : ~/.config/skhd/scripts/logical-space --focus 6
+$super - 7 : ~/.config/skhd/scripts/logical-space --focus 7
+$super - 8 : ~/.config/skhd/scripts/logical-space --focus 8
+$super - 9 : ~/.config/skhd/scripts/logical-space --focus 9
+$super - 0 : ~/.config/skhd/scripts/logical-space --focus 10
 
 # move window to space # and follow it (same logical chain)
-$super + shift - 1 : ~/.config/skhd/logical-space/logical-space --move 1
-$super + shift - 2 : ~/.config/skhd/logical-space/logical-space --move 2
-$super + shift - 3 : ~/.config/skhd/logical-space/logical-space --move 3
-$super + shift - 4 : ~/.config/skhd/logical-space/logical-space --move 4
-$super + shift - 5 : ~/.config/skhd/logical-space/logical-space --move 5
-$super + shift - 6 : ~/.config/skhd/logical-space/logical-space --move 6
-$super + shift - 7 : ~/.config/skhd/logical-space/logical-space --move 7
-$super + shift - 8 : ~/.config/skhd/logical-space/logical-space --move 8
-$super + shift - 9 : ~/.config/skhd/logical-space/logical-space --move 9
-$super + shift - 0 : ~/.config/skhd/logical-space/logical-space --move 10
+$super + shift - 1 : ~/.config/skhd/scripts/logical-space --move 1
+$super + shift - 2 : ~/.config/skhd/scripts/logical-space --move 2
+$super + shift - 3 : ~/.config/skhd/scripts/logical-space --move 3
+$super + shift - 4 : ~/.config/skhd/scripts/logical-space --move 4
+$super + shift - 5 : ~/.config/skhd/scripts/logical-space --move 5
+$super + shift - 6 : ~/.config/skhd/scripts/logical-space --move 6
+$super + shift - 7 : ~/.config/skhd/scripts/logical-space --move 7
+$super + shift - 8 : ~/.config/skhd/scripts/logical-space --move 8
+$super + shift - 9 : ~/.config/skhd/scripts/logical-space --move 9
+$super + shift - 0 : ~/.config/skhd/scripts/logical-space --move 10
 
 # start/stopping yabai
 

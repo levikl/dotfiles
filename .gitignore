@@ -1,5 +1,5 @@
 .config/waybar/scripts/email*
 
 # compiled helpers (rebuilt at launch from sketchybarrc / make)
-.config/skhd/logical-space/logical-space
+.config/skhd/scripts/logical-space
 .config/sketchybar/helper/helper
