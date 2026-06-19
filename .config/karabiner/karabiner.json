@@ -197,6 +197,21 @@
                                         ]
                                     }
                                 ]
+                            },
+                            {
+                                "type": "basic",
+                                "from": { "key_code": "c", "modifiers": { "mandatory": ["control"] } },
+                                "to": [{ "key_code": "c", "modifiers": ["left_command"] }],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.brave\\.Browser$",
+                                            "^com\\.vivaldi\\.Vivaldi$",
+                                            "^org\\.chromium\\.Chromium$"
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -252,6 +267,22 @@
                                 "type": "basic",
                                 "from": { "key_code": "v", "modifiers": { "mandatory": ["control", "shift"] } },
                                 "to": [{ "key_code": "v", "modifiers": ["left_command"] }],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.mitchellh\\.ghostty$"]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Copy in Ghostty (ctrl-shift-c → cmd-c)",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": { "key_code": "c", "modifiers": { "mandatory": ["control", "shift"] } },
+                                "to": [{ "key_code": "c", "modifiers": ["left_command"] }],
                                 "conditions": [
                                     {
                                         "type": "frontmost_application_if",
