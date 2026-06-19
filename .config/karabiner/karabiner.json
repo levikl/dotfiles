@@ -212,6 +212,21 @@
                                         ]
                                     }
                                 ]
+                            },
+                            {
+                                "type": "basic",
+                                "from": { "key_code": "x", "modifiers": { "mandatory": ["control"] } },
+                                "to": [{ "key_code": "x", "modifiers": ["left_command"] }],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.brave\\.Browser$",
+                                            "^com\\.vivaldi\\.Vivaldi$",
+                                            "^org\\.chromium\\.Chromium$"
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
