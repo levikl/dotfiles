@@ -16,7 +16,7 @@ volume_slider=(
 volume_icon=(
   # click_script="$PLUGIN_DIR/volume_click.sh"
   script="$PLUGIN_DIR/volume.sh"
-  padding_left=1
+  padding_left=5
   padding_right=0
   icon=$VOLUME_100
   icon.align=left
@@ -35,3 +35,12 @@ sketchybar --add slider volume right \
   --add item volume_icon right \
   --set volume_icon "${volume_icon[@]}" \
   --subscribe volume_icon mouse.scrolled
+
+status_bracket=(
+  background.color=$BACKGROUND_1
+  background.border_color=$BACKGROUND_1
+  background.corner_radius=5
+)
+
+sketchybar --add bracket status battery ram volume_icon wifi \
+  --set status "${status_bracket[@]}"

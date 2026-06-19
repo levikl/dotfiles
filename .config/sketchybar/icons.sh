@@ -2,6 +2,7 @@
 
 # General Icons
 LOADING=􀖇
+RAM=
 APPLE=􀣺
 PREFERENCES=􀺽
 ACTIVITY=􀒓

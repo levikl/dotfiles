@@ -262,6 +262,59 @@
                         ]
                     },
                     {
+                        "description": "Linux-style Ctrl zoom (ctrl +/-/0 → Cmd) in browsers and Ghostty",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": { "key_code": "equal_sign", "modifiers": { "mandatory": ["control"] } },
+                                "to": [{ "key_code": "equal_sign", "modifiers": ["left_command"] }],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.brave\\.Browser$",
+                                            "^com\\.vivaldi\\.Vivaldi$",
+                                            "^org\\.chromium\\.Chromium$",
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "basic",
+                                "from": { "key_code": "hyphen", "modifiers": { "mandatory": ["control"] } },
+                                "to": [{ "key_code": "hyphen", "modifiers": ["left_command"] }],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.brave\\.Browser$",
+                                            "^com\\.vivaldi\\.Vivaldi$",
+                                            "^org\\.chromium\\.Chromium$",
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "basic",
+                                "from": { "key_code": "0", "modifiers": { "mandatory": ["control"] } },
+                                "to": [{ "key_code": "0", "modifiers": ["left_command"] }],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.brave\\.Browser$",
+                                            "^com\\.vivaldi\\.Vivaldi$",
+                                            "^org\\.chromium\\.Chromium$",
+                                            "^com\\.mitchellh\\.ghostty$"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "description": "Meh Hyper + Q → Cmd+W (close window instead of quit)",
                         "manipulators": [
                             {
