@@ -17,6 +17,12 @@
           "vertical" : {
             "command" : {
               "type" : "pinchZoom"
+            },
+            "control" : {
+              "type" : "pinchZoom"
+            },
+            "option" : {
+              "type" : "pinchZoom"
             }
           }
         },

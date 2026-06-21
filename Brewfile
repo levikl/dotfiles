@@ -10,6 +10,8 @@ brew "bash"
 brew "openssl@3"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Cross-platform make
+brew "cmake"
 # Debugger for the Go programming language
 brew "delve"
 # Powerful, lightweight programming language
@@ -18,20 +20,24 @@ brew "lua"
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# Serialization library for C++, supporting Java, C#, and Go
+brew "flatbuffers"
 # GitHub command-line tool
 brew "gh"
-# Lightweight and flexible command-line JSON processor
-brew "jq"
-# JSON for Modern C++ (header-only; used by skhd/logical-space helper)
-brew "nlohmann-json"
 # General-purpose data compression with high compression ratio
 brew "xz"
+# Open-source build automation tool based on the Groovy and Kotlin DSL
+brew "gradle"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
 # Language Server for the Lua language
 brew "lua-language-server"
 # Incremental parsing library
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# JSON for modern C++
+brew "nlohmann-json"
 # Node.js version manager
 brew "nodenv"
 # Fast, disk space efficient package manager
@@ -50,6 +56,8 @@ brew "qemu"
 brew "ripgrep"
 # Standard unix software packaging tool
 brew "rpm"
+# Low-level access to audio, keyboard, mouse, joystick, and graphics
+brew "sdl3"
 # Fast, configurable, shell plugin manager
 brew "sheldon"
 # Autoformat shell script source code
@@ -82,12 +90,16 @@ cask "karabiner-elements"
 cask "kotlin-lsp"
 # Customise mouse behavior
 cask "linearmouse"
+# 2D game framework for Lua
+cask "love"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
 # Simple hotkey daemon written in Zig
 cask "jackielii/tap/skhd-zig", trusted: true
+# Video game digital distribution service
+cask "steam"
 # Google Chromium, sans integration with Google
 cask "ungoogled-chromium"
 # Web browser with built-in email client focusing on customization and control
