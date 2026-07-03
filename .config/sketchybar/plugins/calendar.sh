@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DAY=$(date '+%d')
+DAY=$(date '+%e' | sed 's/^ *//')
 TIME=$(date '+%l:%M' | sed 's/^ *//')
 LABEL="${DAY} • ${TIME}"
 

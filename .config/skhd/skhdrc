@@ -8,6 +8,8 @@ $super - j : ~/.config/skhd/scripts/change-focus.sh --south
 $super - k : ~/.config/skhd/scripts/change-focus.sh --north
 $super - l : ~/.config/skhd/scripts/change-focus.sh --east
 
+$super - s : screencapture -x -c -i
+
 # toggle window float
 $super - v : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
@@ -35,7 +37,7 @@ $super + shift - up    : yabai -m window --resize top:0:-50 ; yabai -m window --
 $super - return : osascript -e 'tell application "Ghostty" to make new window' -e 'tell application "Ghostty" to activate'
 $super - b : osascript -e 'tell application "Brave Browser" to make new window' -e 'tell application "Brave Browser" to activate'
 $super - e : osascript -e 'tell application "Finder" to make new Finder window' -e 'tell application "Finder" to activate'
-$super - t : osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+$super - d : osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
 $super - x : ~/.config/skhd/scripts/toggle-caffeine.sh
 $super - w : ~/.config/skhd/scripts/toggle-menubar.sh
 
