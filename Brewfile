@@ -12,6 +12,8 @@ brew "openssl@3"
 brew "bat"
 # Cross-platform make
 brew "cmake"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
 # Debugger for the Go programming language
 brew "delve"
 # Powerful, lightweight programming language
@@ -58,6 +60,8 @@ brew "ripgrep"
 brew "rpm"
 # Low-level access to audio, keyboard, mouse, joystick, and graphics
 brew "sdl3"
+# 7-Zip is a file archiver with a high compression ratio
+brew "sevenzip"
 # Fast, configurable, shell plugin manager
 brew "sheldon"
 # Autoformat shell script source code
@@ -78,6 +82,10 @@ brew "zlib"
 brew "asmvik/formulae/yabai", trusted: true
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
+# Android SDK component
+cask "android-platform-tools"
+# Emulator to play GameCube and Wii games
+cask "dolphin"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
@@ -96,6 +104,8 @@ cask "love"
 cask "raycast"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
+# Screenshot measurement and annotation tool
+cask "shottr"
 # Simple hotkey daemon written in Zig
 cask "jackielii/tap/skhd-zig", trusted: true
 # Video game digital distribution service
