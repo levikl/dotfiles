@@ -16,8 +16,6 @@ brew "cmake"
 brew "coreutils"
 # Debugger for the Go programming language
 brew "delve"
-# Powerful, lightweight programming language
-brew "lua"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
@@ -32,6 +30,10 @@ brew "xz"
 brew "gradle"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Anti-bikeshedding Kotlin linter with built-in formatter
+brew "ktlint"
+# Powerful, lightweight programming language
+brew "lua"
 # Language Server for the Lua language
 brew "lua-language-server"
 # Incremental parsing library
@@ -60,12 +62,16 @@ brew "ripgrep"
 brew "rpm"
 # Low-level access to audio, keyboard, mouse, joystick, and graphics
 brew "sdl3"
+# Open-source port of Prince of Persia
+brew "sdlpop"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
 # Fast, configurable, shell plugin manager
 brew "sheldon"
 # Autoformat shell script source code
 brew "shfmt"
+# Super fast C++ logging library
+brew "spdlog"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Change macOS audio source from the command-line
@@ -76,6 +82,10 @@ brew "tcl-tk"
 brew "tree"
 # Parser generator tool
 brew "tree-sitter-cli"
+# Command-line unarchiving tools supporting multiple formats
+brew "unar"
+# Binary diff, differential compression tools
+brew "xdelta"
 # General-purpose lossless data-compression library
 brew "zlib"
 # A tiling window manager for macOS based on binary space partitioning.
@@ -100,6 +110,8 @@ cask "kotlin-lsp"
 cask "linearmouse"
 # 2D game framework for Lua
 cask "love"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Tool that provides consistent, highly configurable symbols for apps
