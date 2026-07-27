@@ -38,9 +38,6 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 # go
 export PATH="$HOME/go/bin:$PATH"
 
-# podman
-export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
-
 # pnpm
 export PNPM_HOME="/home/levi/.local/share/pnpm"
 case ":$PATH:" in
@@ -60,3 +57,12 @@ export KOTLIN_LSP_DIR="${${:-/opt/homebrew/bin/kotlin-lsp}:A:h}"
 
 # keep .local last
 export PATH="$HOME/.local/bin:$PATH"
+
+# platform-specific configuration
+if [[ "$(uname -s)" == "Linux" ]]; then
+  # podman
+  export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+elif [[ "$(uname -s)" == "Darwin" ]]; then
+  # OrbStack
+  source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+fi
